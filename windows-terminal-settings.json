@@ -1,0 +1,143 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
+    {
+      "command": "find",
+      "id": "User.find"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "id": "User.splitPane.A6751878"
+    },
+    {
+      "command": "paste",
+      "id": "User.paste"
+    },
+    {
+      "command": {
+        "action": "copy",
+        "singleLine": false
+      },
+      "id": "User.copy.644BA8F2"
+    }
+  ],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{d601c8c9-425d-45bd-a464-442a19dd057b}",
+  "keybindings": [
+    {
+      "id": "User.find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "id": "User.paste",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "User.copy.644BA8F2",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "User.splitPane.A6751878",
+      "keys": "alt+shift+d"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {},
+    "list": [
+      {
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell"
+      },
+      {
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      },
+      {
+        "guid": "{21735eaa-7658-5a38-84d4-f191b59b8b68}",
+        "hidden": false,
+        "name": "Developer Command Prompt for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{9a5d2fda-5a81-5cd0-b71d-35dfb7847510}",
+        "hidden": false,
+        "name": "Developer PowerShell for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{1780193a-e796-53fc-9822-5a7b78f233cb}",
+        "hidden": false,
+        "name": "Ubuntu",
+        "source": "Microsoft.WSL"
+      },
+      {
+        "altGrAliasing": true,
+        "antialiasingMode": "grayscale",
+        "closeOnExit": "automatic",
+        "colorScheme": "Cobalt 2 Terminal",
+        "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "cursorShape": "bar",
+        "font": {
+          "face": "JetBrains Mono",
+          "size": 12
+        },
+        "guid": "{d601c8c9-425d-45bd-a464-442a19dd057b}",
+        "hidden": false,
+        "historySize": 9001,
+        "icon": "C:\\\\Program Files\\\\Git\\\\mingw64\\\\share\\\\git\\\\git-for-windows.ico",
+        "name": "Git Bash",
+        "padding": "8, 8, 8, 8",
+        "snapOnInput": true,
+        "startingDirectory": "%USERPROFILE%",
+        "useAcrylic": false
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#132738",
+      "black": "#000000",
+      "blue": "#1460D2",
+      "brightBlack": "#555555",
+      "brightBlue": "#5555FF",
+      "brightCyan": "#6AE3FA",
+      "brightGreen": "#3BD01D",
+      "brightPurple": "#FF55FF",
+      "brightRed": "#F40E17",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#EDC809",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#00BBBB",
+      "foreground": "#FFFFFF",
+      "green": "#38DE21",
+      "name": "Cobalt 2 Terminal",
+      "purple": "#FF005D",
+      "red": "#FF0000",
+      "selectionBackground": "#FFFFFF",
+      "white": "#BBBBBB",
+      "yellow": "#FFE50A"
+    }
+  ],
+  "themes": []
+}
