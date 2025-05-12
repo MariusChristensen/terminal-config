@@ -9,7 +9,7 @@ fcd() {
       2>/dev/null | sed 's/\/.git$//' > ~/.project_dirs
   fi
   local dir
-  dir=$(cat ~/.project_dirs | fzf) && cd "$dir"
+  dir=$(cat ~/.project_dirs | fzf --exact) && cd "$dir"
 }
 
 alias refresh-projects='rm ~/.project_dirs && echo "🔄 Project list refreshed!"'
