@@ -17,10 +17,7 @@ alias ll='ls -la'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias c='clear'
+alias dev='cd ~/dev'
+alias proj='cd ~/dev/Personal'
 alias reload='source ~/.bashrc'
 alias glog='git log --oneline --graph --all --decorate'
-
-
-
-
-
