@@ -24,7 +24,23 @@ startup() {
     "https://www.youtube.com/@ThePrimeTimeagen"
 }
 
+ghcreate() {
+  foldername=${PWD##*/}
 
+  # Check if origin remote exists
+  if git remote get-url origin >/dev/null 2>&1; then
+    echo "🚨 Remote 'origin' already exists. Aborting ghcreate to prevent disaster!"
+    return 1
+  fi
+
+  # Create GitHub repo
+  gh repo create "$foldername" "$@" --source=. --remote=origin
+
+  # Push current branch after repo creation
+  current_branch=$(git symbolic-ref --short HEAD)
+  git push -u origin "$current_branch"
+  echo "✅ Repo created & local branch '$current_branch' pushed to GitHub ($foldername)"
+}
 
 alias refresh-projects='rm ~/.project_dirs && echo "□^=^t^d Project list refreshed!"'
 alias ll='ls -la'
