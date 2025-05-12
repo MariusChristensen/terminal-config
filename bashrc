@@ -12,7 +12,13 @@ fcd() {
   dir=$(cat ~/.project_dirs | fzf --exact) && cd "$dir"
 }
 
-alias refresh-projects='rm ~/.project_dirs && echo "🔄 Project list refreshed!"'
+alias refresh-projects='rm ~/.project_dirs && echo "□^=^t^d Project list refreshed!"'
+alias ll='ls -la'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias c='clear'
+alias reload='source ~/.bashrc'
+alias glog='git log --oneline --graph --all --decorate'
 
 
 
