@@ -42,7 +42,7 @@ ghcreate() {
   echo "✅ Repo created & local branch '$current_branch' pushed to GitHub ($foldername)"
 }
 
-alias refresh-projects='rm ~/.project_dirs && echo "□^=^t^d Project list refreshed!"'
+alias refresh-projects='rm ~/.project_dirs && echo "✅ Project list refreshed!"'
 alias ll='ls -la'
 alias ..='cd ..'
 alias ...='cd ../..'
