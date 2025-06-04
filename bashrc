@@ -2,6 +2,21 @@ alias cursor="/c/Users/Marius/AppData/Local/Programs/cursor/resources/app/bin/co
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+gbdelete() {
+  if [ -z "$1" ]; then
+    echo "Usage: gdelete <branch-name>"
+    return 1
+  fi
+
+  local branch="$1"
+
+  git branch -d "$branch"
+  git push origin --delete "$branch"
+  git fetch --prune
+
+  echo "□^|^e Cleanup complete for '$branch'."
+}
+
 fcd() {
   if [[ ! -f ~/.project_dirs ]]; then
     find "$HOME/dev" -type d -name ".git" \
