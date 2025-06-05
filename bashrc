@@ -2,6 +2,45 @@ alias cursor="/c/Users/Marius/AppData/Local/Programs/cursor/resources/app/bin/co
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+gbcreate() {
+  if [ -z "$1" ]; then
+    echo "Usage: gbcreate <new-branch-name> [<base-branch>]"
+    return 1
+  fi
+
+  local new_branch="$1"
+
+  # Auto-fix missing origin/HEAD (main/master detection)
+  git remote set-head origin -a >/dev/null 2>&1
+
+  # Detect default base branch or use user-supplied
+  local base_branch="${2:-$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@' || echo main)}"
+
+  # Check if branch already exists locally
+  if git rev-parse --verify "$new_branch" >/dev/null 2>&1; then
+    echo "✗ Branch '$new_branch' already exists locally."
+    return 1
+  fi
+
+  # Fetch refs
+  git fetch || return 1
+
+  # Create and switch
+  if git switch -c "$new_branch" "origin/$base_branch"; then
+    echo "✓ Created and switched to '$new_branch' from 'origin/$base_branch'"
+  else
+    echo "✗ Failed to create from origin/$base_branch — does it exist?"
+    return 1
+  fi
+
+  # Ask to push
+  read -p "Push '$new_branch' to remote and set upstream? (y/N): " confirm
+  if [[ "$confirm" =~ ^[Yy]$ ]]; then
+    git push -u origin "$new_branch" && echo "↑ Branch pushed and tracking set"
+  fi
+}
+
+
 gbdelete() {
   if [ -z "$1" ]; then
     echo "Usage: gdelete <branch-name>"
