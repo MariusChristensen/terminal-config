@@ -30,6 +30,9 @@ source ~/.bashrc
 
 Enables:
 
+- `ghcreate` → Honestly not 100% sure, think i made it to create remote repos through terminal instead of the vs code UI
+- `gbcreate` → Easy branch creation with push and upsetting of stream
+- `gbdelete` → Branch deletion after merge, remote and locally.
 - `fcd` → fuzzy-jump between Git project folders in `$HOME/dev`
 - `refresh-projects` → refresh the project list after adding/removing repos
 - Cursor editor alias (if installed)
